@@ -67,9 +67,9 @@ public class PantallaAgregarProductoRefrigerado extends JFrame {
         textArea.setVisible(true);
 
 
-        JButton guardar_btn = new JButton("Guardar");
-        guardar_btn.setBounds(10, 290, 100, 30);
-        guardar_btn.addActionListener(new ActionListener() {
+        JButton guardar1_btn = new JButton("Guardar");
+        guardar1_btn.setBounds(10, 290, 100, 30);
+        guardar1_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                String nombre = nombre_txt.getText();
                 String fechaDeCaducidad = fechaDeCaducidad_txt.getText();
@@ -110,7 +110,7 @@ public class PantallaAgregarProductoRefrigerado extends JFrame {
         panel1.add(codigoOrganismoSupAl_txt);
         panel1.add(tempRecomendada_lbl);
         panel1.add(tempRecomendada_txt);
-        panel1.add(guardar_btn);
+        panel1.add(guardar1_btn);
         panel1.add(mostrarRegistros_btn);
         panel1.add(textArea);
         panel1.setLayout(null);
