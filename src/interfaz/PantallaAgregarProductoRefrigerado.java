@@ -71,27 +71,35 @@ public class PantallaAgregarProductoRefrigerado extends JFrame {
         guardar1_btn.setBounds(10, 290, 100, 30);
         guardar1_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               String nombre = nombre_txt.getText();
-                String fechaDeCaducidad = fechaDeCaducidad_txt.getText();
-                int numLote = Integer.parseInt(numLote_txt.getText());
-                String fechaDeEnvasado = fechaDeEnvasado_txt.getText();
-                String paisDeOrigen = paisDeOrigen_txt.getText();
-                int codigoOrganismoSupAl = Integer.parseInt(codigoOrganismoSupAl_txt.getText());
-                float tempRecomendada = Float.parseFloat(tempRecomendada_txt.getText());
+                try {
+                    String nombre = nombre_txt.getText();
+                     String fechaDeCaducidad = fechaDeCaducidad_txt.getText();
+                     int numLote = Integer.parseInt(numLote_txt.getText());
+                     String fechaDeEnvasado = fechaDeEnvasado_txt.getText();
+                     String paisDeOrigen = paisDeOrigen_txt.getText();
+                     int codigoOrganismoSupAl = Integer.parseInt(codigoOrganismoSupAl_txt.getText());
+                     float tempRecomendada = Float.parseFloat(tempRecomendada_txt.getText());
+                    ProductoRefrijerado productoRefrijerado = new ProductoRefrijerado(nombre, fechaDeCaducidad, numLote, fechaDeEnvasado, paisDeOrigen, codigoOrganismoSupAl, tempRecomendada);
+                    administrarDatos.insertarProducto(productoRefrijerado);
+                    JOptionPane.showMessageDialog(null, "Producto agregado correctamente");
+                    
+                } catch (Exception a) {
+                    JOptionPane.showMessageDialog(null, "ERROR Uno de los campos contiene un tipo de dato no valido o vacio  ");
+                }
                 
-
-                ProductoRefrijerado productoRefrijerado = new ProductoRefrijerado(nombre, fechaDeCaducidad, numLote, fechaDeEnvasado, paisDeOrigen, codigoOrganismoSupAl, tempRecomendada);
-                administrarDatos.insertarProducto(productoRefrijerado);
-                JOptionPane.showMessageDialog(null, "Producto agregado correctamente");
+                
 }
 
         });
 
-        // BOTON PARA MOSTRAR LOS REGISTROS
         JButton mostrarRegistros_btn = new JButton("Mostrar registros");
         mostrarRegistros_btn.setBounds(10, 330, 100, 30);
         mostrarRegistros_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                if (textArea.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "No hay datos para mostrar");
+                }
+                textArea.setText("");
                 textArea.setText(administrarDatos.mostrarProductos());
             }
         });

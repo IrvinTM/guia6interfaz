@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -20,6 +21,7 @@ public class PantallaAgregarProductoFresco extends JFrame {
         administrarDatos = new AdministrarDatos();
         administrarDatos.crearArrayList();
     }
+
 
     private void iniciarComponentes() {
         setTitle("Agregar Producto Fresco");
@@ -51,18 +53,23 @@ public class PantallaAgregarProductoFresco extends JFrame {
         JTextField paisDeOrigen_txt = new JTextField();
         paisDeOrigen_txt.setBounds(120, 170, 100, 30);
 
+
         JButton guardar_btn = new JButton("Guardar");
         guardar_btn.setBounds(10, 210, 100, 30);
         guardar_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               String nombre = nombre_txt.getText();
-                String fechaDeCaducidad = fechaDeCaducidad_txt.getText();
-                int numLote = Integer.parseInt(numLote_txt.getText());
-                String fechaDeEnvasado = fechaDeEnvasado_txt.getText();
-                String paisDeOrigen = paisDeOrigen_txt.getText();
-                ProductoFresco productoFresco = new ProductoFresco(nombre, fechaDeCaducidad, numLote, fechaDeEnvasado, paisDeOrigen);
-                administrarDatos.insertarProducto(productoFresco);
-                System.out.println(administrarDatos.mostrarProductos());
+                try {
+                    String nombre = nombre_txt.getText();
+                     String fechaDeCaducidad = fechaDeCaducidad_txt.getText();
+                     int numLote = Integer.parseInt(numLote_txt.getText());
+                     String fechaDeEnvasado = fechaDeEnvasado_txt.getText();
+                     String paisDeOrigen = paisDeOrigen_txt.getText();
+                     ProductoFresco productoFresco = new ProductoFresco(nombre, fechaDeCaducidad, numLote, fechaDeEnvasado, paisDeOrigen);
+                     administrarDatos.insertarProducto(productoFresco);
+                    
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "ERROR Uno de los campos contiene un tipo de dato no valido o vacio  ");
+                }
 
             }
         });
@@ -77,6 +84,9 @@ public class PantallaAgregarProductoFresco extends JFrame {
         mostrar_btn.setBounds(120, 210, 100, 30);
         mostrar_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                if (textArea.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "No hay datos para mostrar");
+                }
                 textArea.setText("");
                 textArea.setText(administrarDatos.mostrarProductos());
             }
@@ -96,6 +106,7 @@ public class PantallaAgregarProductoFresco extends JFrame {
         panel1.add(paisDeOrigen_txt);
         panel1.add(guardar_btn);
         panel1.add(mostrar_btn);
+        panel1.add(textArea);
         panel1.setLayout(null);
         this.add(panel1);       
     
