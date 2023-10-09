@@ -93,7 +93,7 @@ public class PantallaAgregarProductoRefrigerado extends JFrame {
         });
 
         JButton mostrarRegistros_btn = new JButton("Mostrar registros");
-        mostrarRegistros_btn.setBounds(10, 330, 100, 30);
+        mostrarRegistros_btn.setBounds(130, 290, 100, 30);
         mostrarRegistros_btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (textArea.getText().equals("")){

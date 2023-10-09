@@ -63,19 +63,19 @@ public class PantallaAgregarProductoCongelado extends JFrame {
         tempRecomendada_lbl.setBounds(10, 210, 100, 30);
         JTextField tempRecomendada_txt = new JTextField();
         tempRecomendada_txt.setBounds(120, 210, 100, 30);
-        JLabel porcentajeNitrogeno_lbl = new JLabel("Porcentaje de nitrogeno: ");
+        JLabel porcentajeNitrogeno_lbl = new JLabel("% nitrogeno: ");
         porcentajeNitrogeno_lbl.setBounds(10, 250, 100, 30);
         JTextField porcentajeNitrogeno_txt = new JTextField();
         porcentajeNitrogeno_txt.setBounds(120, 250, 100, 30);
-        JLabel porcentajeOxigeno_lbl = new JLabel("Porcentaje de oxigeno: ");
+        JLabel porcentajeOxigeno_lbl = new JLabel("% oxigeno: ");
         porcentajeOxigeno_lbl.setBounds(10, 290, 100, 30);
         JTextField porcentajeOxigeno_txt = new JTextField();
         porcentajeOxigeno_txt.setBounds(120, 290, 100, 30);
-        JLabel porcentajeDioxidoCarbono_lbl = new JLabel("Porcentaje de dioxido de carbono: ");
+        JLabel porcentajeDioxidoCarbono_lbl = new JLabel("% dioxido de carbono: ");
         porcentajeDioxidoCarbono_lbl.setBounds(10, 330, 100, 30);
         JTextField porcentajeDioxidoCarbono_txt = new JTextField();
         porcentajeDioxidoCarbono_txt.setBounds(120, 330, 100, 30);
-        JLabel porcentajeVaporAgua_lbl = new JLabel("Porcentaje de vapor de agua: ");
+        JLabel porcentajeVaporAgua_lbl = new JLabel("% vapor de agua: ");
         porcentajeVaporAgua_lbl.setBounds(10, 370, 100, 30);
         JTextField porcentajeVaporAgua_txt = new JTextField();
         porcentajeVaporAgua_txt.setBounds(120, 370, 100, 30);
@@ -154,7 +154,6 @@ public class PantallaAgregarProductoCongelado extends JFrame {
         JTextField salinidadAgua_txt = new JTextField();
         salinidadAgua_txt.setBounds(120, 250, 100, 30);
         JTextArea areaDeTexto2 = new JTextArea();
-        //add the area de texto to the second panel at the left
         areaDeTexto2.setBounds(250, 10, 300, 500);
         areaDeTexto2.setEditable(false);
         areaDeTexto2.setVisible(true);
@@ -273,10 +272,6 @@ public class PantallaAgregarProductoCongelado extends JFrame {
             });
 
 
-
-
-
-        //buttons for the other two types of congelados
         JPanel panel2 = new JPanel();
         panel2.setLayout(null);
 

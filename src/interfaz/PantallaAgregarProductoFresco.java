@@ -34,24 +34,25 @@ public class PantallaAgregarProductoFresco extends JFrame {
 
         JLabel nombre_lbl = new JLabel("Nombre: ");
         nombre_lbl.setBounds(10, 10, 100, 30);
+        nombre_lbl.setFont(new java.awt.Font("Tahoma", 0, 22));
         JTextField nombre_txt = new JTextField();
-        nombre_txt.setBounds(120, 10, 100, 30);
+        nombre_txt.setBounds(120, 10, 200, 30);
         JLabel fechaDeCaducidad_lbl = new JLabel("Fecha de caducidad: ");
         fechaDeCaducidad_lbl.setBounds(10, 50, 100, 30);
         JTextField fechaDeCaducidad_txt = new JTextField();
-        fechaDeCaducidad_txt.setBounds(120, 50, 100, 30);
+        fechaDeCaducidad_txt.setBounds(120, 50, 200, 30);
         JLabel numLote_lbl = new JLabel("Numero de lote: ");
         numLote_lbl.setBounds(10, 90, 100, 30);
         JTextField numLote_txt = new JTextField();
-        numLote_txt.setBounds(120, 90, 100, 30);
+        numLote_txt.setBounds(120, 90, 200, 30);
         JLabel fechaDeEnvasado_lbl = new JLabel("Fecha de envasado: ");
         fechaDeEnvasado_lbl.setBounds(10, 130, 100, 30);
         JTextField fechaDeEnvasado_txt = new JTextField();
-        fechaDeEnvasado_txt.setBounds(120, 130, 100, 30);
+        fechaDeEnvasado_txt.setBounds(120, 130, 200, 30);
         JLabel paisDeOrigen_lbl = new JLabel("Pais de origen: ");
         paisDeOrigen_lbl.setBounds(10, 170, 100, 30);
         JTextField paisDeOrigen_txt = new JTextField();
-        paisDeOrigen_txt.setBounds(120, 170, 100, 30);
+        paisDeOrigen_txt.setBounds(120, 170, 200, 30);
 
 
         JButton guardar_btn = new JButton("Guardar");
@@ -75,7 +76,7 @@ public class PantallaAgregarProductoFresco extends JFrame {
         });
 
         JTextArea textArea = new JTextArea();
-        textArea.setBounds(250, 10, 300, 500);
+        textArea.setBounds(340, 10, 300, 500);
         textArea.setEditable(false);
         textArea.setVisible(true);
 
